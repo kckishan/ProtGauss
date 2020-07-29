@@ -1,4 +1,4 @@
-# ProtGauss README
+# ProtGauss
 This repository is the official implementation of `Machine learning predicts nucleosome binding modes of transcription factors`.
 ## Block diagram
 ![Block diagram](images/model.png)
