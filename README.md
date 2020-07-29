@@ -83,7 +83,7 @@ python3 main.py --binding -1
 ```
 
 \
-\
+
 ## Results
 Tables reporting model's performance are saved inside `results` folder with naming convention as:
 `{binding_mode}_{subsequence_length}.csv`.
