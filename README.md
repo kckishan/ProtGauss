@@ -25,9 +25,9 @@ More details are provided inside `data` folder.
 ## Options
 Training of ProtGauss is handled by `main.py`  which provides following arguments:
 ```
---seqtype		STR		Type of sequences: eDBD or full 		Default  is eDBD.
---len			INT		Length of subsequence (3, 4, 5, 6)		Default is 3.	
---binding		INT		Binding mode to use for training 		Default is 0.
+--seqtype	STR		Type of sequences: eDBD or full 	Default  is eDBD.
+--len		INT		Length of subsequence (3, 4, 5, 6)	Default is 3.	
+--binding	INT		Binding mode to use for training 	Default is 0.
 ```
 For binding parameters, we use following mapping:
 ```
@@ -43,6 +43,8 @@ For binding parameters, we use following mapping:
 
 
 ## Running ProtGauss
+- Make sure you check the README in `data` folder before running the model.
+
 - Run the model with default parameters 
 
 ```train
@@ -79,3 +81,27 @@ python3 main.py --binding 0
 ```train
 python3 main.py --binding -1
 ```
+
+\
+\
+## Results
+Tables reporting model's performance are saved inside `results` folder with naming convention as:
+`{binding_mode}_{subsequence_length}.csv`.
+
+For example,
+```train
+python3 main.py --binding 0 --seqtype eDBD --len 3
+``` 
+The results will be saved inside `results/eDBD/` as `end_preference_3.csv`.
+
+## Predictions
+Model's prediction for test sequences in folder `data/yeast/` will be saved in the same folder. 
+Note that the folder name should be set in line 63 of `main.py` as `organism =['yeast']`. 
+You can run the model and predict on multiple sequences by defining `organism =['ecoli', 'yeast']`.
+   
+For example, if we train the model with `organism =['yeast']` in line 63 of `main.py`,
+```train
+python3 main.py --binding 0 --seqtype eDBD --len 3
+``` 
+The predictions will be saved inside `data/yeast/` as `yeast_prediction_eDBD3.csv`. 
+The name for prediction file is set as `{organism}_prediction_{sequence_type}{subsequence_length}.csv`. 
