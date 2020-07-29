@@ -36,11 +36,11 @@ def argument_parser():
     model parameters: ArgumentParser Namespace
         The ArgumentParser Namespace that contains the model parameters.
     """
-    parser = argparse.ArgumentParser(description="Run model")
-    parser.add_argument("--seqtype", type=str, default="full",
+    parser = argparse.ArgumentParser(description="Run ProtGauss")
+    parser.add_argument("--seqtype", type=str, default="eDBD",
                         help="Choose: eDBD or full")
     parser.add_argument("--len", type=int, default=3,
-                        help="Length of the Biological words.")
+                        help="Length of the subsequence. (3, 4, 5, 6)")
     parser.add_argument("--binding", type=int, default=0,
                         help="binding types")
     return parser.parse_args()
@@ -59,6 +59,7 @@ def main(args):
         else:
             print("Using pre-generated embeddings")
 
+    # set the folder name (with test sequence fasta file) inside data folder as organism
     organism = ["eDBD_195"]
     for org in organism:
         print(org)

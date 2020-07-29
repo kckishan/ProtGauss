@@ -173,6 +173,7 @@ def run_model(org, folder_name, processedDataFile, args, classes, selected_class
     clf = clf.fit(kernel_matrix_train, train_labels)
     y_pred = clf.predict(kernel_matrix_test)
 
+    #saving the prediction
     if num_classes == 1:
         dec = clf.decision_function(kernel_matrix_test)
         prob = 1./(1 + np.exp(-dec))
