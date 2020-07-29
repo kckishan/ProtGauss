@@ -12,4 +12,7 @@ Required steps to follow before running the model:
 - `rawdata` folder contains the raw fasta file and binding mode summary files.
 
 - `processedData` stores preprocessed sequences containing the representation for 195 TFs.
- 
+
+Training protvec takes a lot of time and to avoid that we provide pretrained embeddings and the processed data.
+You can download them from [Google Drive](https://drive.google.com/drive/folders/1iP1OpCLsbj9lz2ukksQO_p0AMmpwY4i3?usp=sharing).
+You must place the downloaded folders inside `data`.

@@ -1,9 +1,4 @@
-"""
-Created on Mon Dec 5 2016
-
-@author: g.nikolentzos
-
-"""
+# borrowed from Multivariate Gaussian Document Representation from Word Embeddings for Text Categorization by G. Nikolentzos
 
 import sys
 import numpy as np

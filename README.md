@@ -43,7 +43,8 @@ For binding parameters, we use following mapping:
 
 
 ## Running ProtGauss
-- Make sure you check the README in `data` folder before running the model.
+- Make sure you check the README in `data` folder before running the model. Before training the model, `main.py` runs ProtVec and also preprocess data if the processed files are not already available.
+  
 
 - Run the model with default parameters 
 
@@ -82,7 +83,6 @@ python3 main.py --binding 0
 python3 main.py --binding -1
 ```
 
-\
 
 ## Results
 Tables reporting model's performance are saved inside `results` folder with naming convention as:
@@ -105,3 +105,6 @@ python3 main.py --binding 0 --seqtype eDBD --len 3
 ``` 
 The predictions will be saved inside `data/yeast/` as `yeast_prediction_eDBD3.csv`. 
 The name for prediction file is set as `{organism}_prediction_{sequence_type}{subsequence_length}.csv`. 
+
+## Acknowledgement
+We are thankful to kyu99 for biovec implementation [link](https://github.com/kyu999/biovec).

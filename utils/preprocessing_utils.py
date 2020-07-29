@@ -22,7 +22,6 @@ def parse_sequences(sequence_file):
         for line in lines:
             sequence_list.append(line.replace("  ", " ").split())
 
-    num_proteins = 0
     sequences = {}
     i = 0
     for row in lines:
@@ -91,10 +90,10 @@ def pad_embeddings(embs, seq_length, d_emb):
 
 def generate_subsequences(sequence, embeddings, n, agg=False):
     # Convert to lowercases
-#     s = s.lower()
-    
+    sequence = sequence.lower()
+
     # Replace all none alphanumeric characters with spaces
-    s = re.sub(r'[^a-zA-Z0-9\s]', ' ', sequence)
+    sequence = re.sub(r'[^a-zA-Z0-9\s]', ' ', sequence)
     
     # Break sentence in the token, remove empty tokens
     tokens = [token for token in sequence.split(" ") if token != ""]
